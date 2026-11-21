@@ -1,0 +1,16 @@
+Project-local Python toolchain | E:\AI-3D-Print\.tools
+
+CPython 3.12.14, Windows x86_64
+Source: existing uv-managed distribution C:\Users\yan\AppData\Roaming\uv\python\cpython-3.12.14-windows-x86_64-none
+Destination: E:\AI-3D-Print\.tools\python\python.exe
+Executable SHA-256: f7ab44f15f6067dc0613fb2b2aeff1287d4fa90b6fbe719f3574055bb11904ab
+Verified sys.executable and sys.prefix resolved to E:, SSL reported OpenSSL 3.5.8.
+
+uv 0.12.7 (61291a8ca, x86_64-pc-windows-msvc)
+Source: existing C:\Users\yan\.local\bin\uv.exe
+Destination: E:\AI-3D-Print\.tools\uv.exe
+SHA-256: a98374aee19f113b7f2527f748306b59fc3244fb548e838ec8a9893685861f96
+
+PyPI's direct connection returned TLS EOF here. TUNA mirror over HTTPS successfully resolved build123d 0.13.0 with the bundled pip and uv dry run.
+Mirror: https://pypi.tuna.tsinghua.edu.cn/simple
+Use UV_CACHE_DIR inside .tools and UV_LINK_MODE=copy on the exFAT E: drive.

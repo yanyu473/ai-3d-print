@@ -1,0 +1,127 @@
+[
+  {
+    "index": 0,
+    "z_mm": 0.2,
+    "preview_segments": 656
+  },
+  {
+    "index": 1,
+    "z_mm": 0.4,
+    "preview_segments": 658
+  },
+  {
+    "index": 2,
+    "z_mm": 0.6000000000000001,
+    "preview_segments": 658
+  },
+  {
+    "index": 3,
+    "z_mm": 0.8,
+    "preview_segments": 290
+  },
+  {
+    "index": 4,
+    "z_mm": 1,
+    "preview_segments": 282
+  },
+  {
+    "index": 5,
+    "z_mm": 1.2,
+    "preview_segments": 274
+  },
+  {
+    "index": 6,
+    "z_mm": 1.4,
+    "preview_segments": 250
+  },
+  {
+    "index": 7,
+    "z_mm": 1.5999999999999999,
+    "preview_segments": 250
+  },
+  {
+    "index": 8,
+    "z_mm": 1.7999999999999998,
+    "preview_segments": 250
+  },
+  {
+    "index": 9,
+    "z_mm": 1.9999999999999998,
+    "preview_segments": 234
+  },
+  {
+    "index": 10,
+    "z_mm": 2.1999999999999997,
+    "preview_segments": 226
+  },
+  {
+    "index": 11,
+    "z_mm": 2.4,
+    "preview_segments": 218
+  },
+  {
+    "index": 12,
+    "z_mm": 2.6,
+    "preview_segments": 250
+  },
+  {
+    "index": 13,
+    "z_mm": 2.8000000000000003,
+    "preview_segments": 218
+  },
+  {
+    "index": 14,
+    "z_mm": 3.0000000000000004,
+    "preview_segments": 218
+  },
+  {
+    "index": 15,
+    "z_mm": 3.2000000000000006,
+    "preview_segments": 234
+  },
+  {
+    "index": 16,
+    "z_mm": 3.400000000000001,
+    "preview_segments": 234
+  },
+  {
+    "index": 17,
+    "z_mm": 3.600000000000001,
+    "preview_segments": 242
+  },
+  {
+    "index": 18,
+    "z_mm": 3.800000000000001,
+    "preview_segments": 250
+  },
+  {
+    "index": 19,
+    "z_mm": 4.000000000000001,
+    "preview_segments": 258
+  },
+  {
+    "index": 20,
+    "z_mm": 4.200000000000001,
+    "preview_segments": 274
+  },
+  {
+    "index": 21,
+    "z_mm": 4.400000000000001,
+    "preview_segments": 290
+  },
+  {
+    "index": 22,
+    "z_mm": 4.600000000000001,
+    "preview_segments": 658
+  },
+  {
+    "index": 23,
+    "z_mm": 4.800000000000002,
+    "preview_segments": 658
+  },
+  {
+    "index": 24,
+    "z_mm": 5.000000000000002,
+    "preview_segments": 656
+  }
+]

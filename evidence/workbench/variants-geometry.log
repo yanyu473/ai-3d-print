@@ -1,0 +1,65 @@
+CAD structure variant verification at 2026-11-21T07:47:14.260429+00:00
+STEP reopened and physically inspected for geometry features. STL and GLB checked for a single watertight body.
+DFM ran on the exported STL and generic profile; no physical printer was used.
+
+reinforced_bracket  |  加强角码，长 48 mm，宽 38 mm，高 36 mm，壁厚 4 mm，孔径 5 mm
+Option tuple order: rib_count, base_hole_count, upright_hole_count
+PASS (0, 0, 0) STEP/STL/GLB, volume 13440.000000 mm^3, DFM warn, STL 56d7e794f6a3c74635fcc85f42ad6dbbd3dfb0d90793a60d4e940f05117fa36a
+PASS (0, 0, 2) STEP/STL/GLB, volume 13282.920367 mm^3, DFM warn, STL eb5e2b32e09ed04704257fc9139ed55b122a1a477410ee2f7a33de005e0b1f0e
+PASS (0, 0, 4) STEP/STL/GLB, volume 13125.840735 mm^3, DFM warn, STL ff14066f8e1a48ae57b6c515b51116d9d15cc108af6180a068d528807d4b63a4
+PASS (0, 2, 0) STEP/STL/GLB, volume 13282.920367 mm^3, DFM warn, STL 1519afd996651f6760ac368ecdba44e321ded90961a3eb9aae3d284bb5e6a073
+PASS (0, 2, 2) STEP/STL/GLB, volume 13125.840735 mm^3, DFM warn, STL 7327424e069e6af6f170b9b907451dcb5fbc74da9fb3316f1ea0406758ad6cbb
+PASS (0, 2, 4) STEP/STL/GLB, volume 12968.761102 mm^3, DFM warn, STL 2243605f41d36848ea1832240dea25f401bcbb847a1b5f36800f22ebc1a69601
+PASS (0, 4, 0) STEP/STL/GLB, volume 13125.840735 mm^3, DFM warn, STL 8115107186e3f32ebc65e5bf3399c7226a980bb3cab51c2551cbc70440a25609
+PASS (0, 4, 2) STEP/STL/GLB, volume 12968.761102 mm^3, DFM warn, STL de6a557b6cfb7a246a9e09adcc2e496c8c77f180136733160cfdaabd8f87962c
+PASS (0, 4, 4) STEP/STL/GLB, volume 12811.681469 mm^3, DFM warn, STL cc8321fc03c52118e9135d6903a8fc440c49cecc6ea272b46b6f62d681cdb00e
+PASS (1, 0, 0) STEP/STL/GLB, volume 14645.432553 mm^3, DFM warn, STL 738ef5414e7994fad8f734252185510c98ba24e46f22b9e24bbf290746a4153c
+PASS (1, 0, 2) STEP/STL/GLB, volume 14488.352920 mm^3, DFM warn, STL f32c4b28fe03b068e7daf134bcfb2099df0ebf79129c16aac48d49f35326fd16
+PASS (1, 0, 4) STEP/STL/GLB, volume 14331.273288 mm^3, DFM warn, STL 8b68598c914f7c88dceffcb85cbd9a619a015f810dc9f9f14752e2b0533260a6
+PASS (1, 2, 0) STEP/STL/GLB, volume 14488.352920 mm^3, DFM warn, STL 1f7f2248e3949203dca119e007ec16c3889b557a4c6afd18d40d9c48985191bf
+PASS (1, 2, 2) STEP/STL/GLB, volume 14331.273288 mm^3, DFM warn, STL 6e364ec19c69bb5dee58bb2d5d819e22fcad9de9a9309304186380f226e36c97
+     Original, omitted options, and explicit defaults have byte-identical STL and matching STEP volume.
+PASS (1, 2, 4) STEP/STL/GLB, volume 14174.193655 mm^3, DFM warn, STL 5d06a81413f25d863a9571ff276363b0fa9bc2e5a596a6c54296d6d1212efa10
+PASS (1, 4, 0) STEP/STL/GLB, volume 14331.273288 mm^3, DFM warn, STL 665193286dca53b91fa579456bba33bebc0b64830d790d35bf01a62ab021d614
+PASS (1, 4, 2) STEP/STL/GLB, volume 14174.193655 mm^3, DFM warn, STL 57a2ce9848671237cd3f33e4224e1a801b12cf79416df39d2d5e9c4a2eb11c68
+PASS (1, 4, 4) STEP/STL/GLB, volume 14017.114022 mm^3, DFM warn, STL 3b45d6e9f433ce6a1fe9e1368c1a557a310bff3511530b3c7a4bccec0328a729
+PASS (2, 0, 0) STEP/STL/GLB, volume 15850.865106 mm^3, DFM warn, STL 90b49c1b379d46c15e4c7374645e8f2899cdd84dc3aeb29df703d161c766f014
+PASS (2, 0, 2) STEP/STL/GLB, volume 15693.785473 mm^3, DFM warn, STL b2c9ba6c01a2cbf7a764e7441b9fab96b35d1e06cdb5e15c49513c217c92c01f
+PASS (2, 0, 4) STEP/STL/GLB, volume 15536.705841 mm^3, DFM warn, STL cca730c87fdd311c56450427a3eb7a77c911abe7adc81bf8c56d4057fa6824c5
+PASS (2, 2, 0) STEP/STL/GLB, volume 15693.785473 mm^3, DFM warn, STL 3d5eab6d23052237f06bfd693803659c135a6a5bc44124c4add3bf8762f01ae2
+PASS (2, 2, 2) STEP/STL/GLB, volume 15536.705841 mm^3, DFM warn, STL cb107178a4c69fbe0897ee2bc6549d538dfcf3475ee40555f621ea67a77538f8
+PASS (2, 2, 4) STEP/STL/GLB, volume 15379.626208 mm^3, DFM warn, STL dd432cc78d2bebb18c2c8698d325abeada43bf51efb014a0bf30aaebdc700c4f
+PASS (2, 4, 0) STEP/STL/GLB, volume 15536.705841 mm^3, DFM warn, STL 1477895da3216c1db788505d30e48b88e12b022dd3af15b7ead3c0ac3aa113f4
+     Verified offline slice, 180 layers, G-code 1dc83c07d41876847af7f91cc954a0f5e44db9d8a3bf584cbb63ead64946f20a
+PASS (2, 4, 2) STEP/STL/GLB, volume 15379.626208 mm^3, DFM warn, STL eaba70aed7f2cc387bc9569310eeaeefb886e77f4c3f31a379dd948c4a8b4efd
+PASS (2, 4, 4) STEP/STL/GLB, volume 15222.546575 mm^3, DFM warn, STL 4a356e4db19003faa5517c5b7ed8645d665c1bda0506fee6ff96131af341a690
+reinforced_bracket: 27/27 passed
+
+electronics_tray  |  电子盒底座，长 62 mm，宽 44 mm，高 20 mm，壁厚 2.4 mm，螺丝柱直径 7 mm，孔径 2.8 mm
+Option tuple order: compartment_count, post_count, cable_notch
+PASS (1, 0, 0) STEP/STL/GLB, volume 14957.657398 mm^3, DFM warn, STL b966c85576b756dbcbf26c62609e5e4a6ce0aee7361f945a1002bca2b8dd37fd
+PASS (1, 0, 1) STEP/STL/GLB, volume 14653.225270 mm^3, DFM warn, STL 246dd96b6ea4901a9efd16ed7241f9804e90095dad3442916bb773b8f85cb297
+PASS (1, 4, 0) STEP/STL/GLB, volume 16434.871460 mm^3, DFM warn, STL 834019065dbf271501f7f85382833b59c4ff507fc98997696877b878c84fc924
+     Original, omitted options, and explicit defaults have byte-identical STL and matching STEP volume.
+PASS (1, 4, 1) STEP/STL/GLB, volume 16130.439332 mm^3, DFM warn, STL 87b0f1d386476a4fe8d54277c0932716b12292fbab022e44742366f6e8063ff4
+PASS (2, 0, 0) STEP/STL/GLB, volume 16315.419958 mm^3, DFM warn, STL 16de804cfe7c068959088f6940521a1708f7f9b820ced0ceeeca08ab7285fc9c
+PASS (2, 0, 1) STEP/STL/GLB, volume 16010.987830 mm^3, DFM warn, STL 33e3d063c399e177b969413f84bee3f82e03b7942e082341cd91684155ed5781
+PASS (2, 4, 0) STEP/STL/GLB, volume 17792.634020 mm^3, DFM warn, STL acdbff7a0793973727b010994f8d73bb89938b9834525d84b6d89be520c63233
+PASS (2, 4, 1) STEP/STL/GLB, volume 17488.201892 mm^3, DFM warn, STL 03c51bc134f606b783df9d89c65947deb7b4121fe49881f775ebc40f4eb04bc9
+PASS (3, 0, 0) STEP/STL/GLB, volume 17673.182518 mm^3, DFM warn, STL fc0d179993bb299d0c71186ea1c5d1fc605fb66020fca0739482dc24358332e5
+PASS (3, 0, 1) STEP/STL/GLB, volume 17470.227766 mm^3, DFM warn, STL 790056e8ebdfe5fbee96a10d6ce6441a8ade4179046a7a222b64130fda01e5c3
+     Verified offline slice, 100 layers, G-code 72cf8018bcd5a912e18d769a35405c9bef4ab1455f0ab2521350986d6b724462
+PASS (3, 4, 0) STEP/STL/GLB, volume 19150.396580 mm^3, DFM warn, STL 0430568a3daf4328bd2e788aea84311cbe7830176f0115cc9fc7c68740441002
+PASS (3, 4, 1) STEP/STL/GLB, volume 18947.441828 mm^3, DFM warn, STL 51afa43d1e06946e61ad65f82998fb2701d8ee456fe4deb896156b40381149b3
+electronics_tray: 12/12 passed
+
+Expected validation errors
+PASS rejected unsupported base hole count: 底板孔数量请选择其中一个值（0、2、4）。
+PASS rejected fractional rib count: 加强筋数量请选择其中一个值（0、1、2）。
+PASS rejected hole/rib collision: 安装孔与板边、折角或加强筋相交，请缩小孔径或调整布局。
+PASS rejected unsupported compartment count: 仓数请选择其中一个值（1、2、3）。
+PASS rejected unsupported post count: 螺丝柱数量请选择其中一个值（0、4）。
+PASS rejected unsupported notch state: 出线口状态请选择其中一个值（开启、開啟、打开、打開、关闭、關閉、1、0）。
+PASS rejected divider/post collision: 隔板与螺丝柱相交，请减小柱径、放大盒体或减少仓数。
+
+Unexpected failures: 0

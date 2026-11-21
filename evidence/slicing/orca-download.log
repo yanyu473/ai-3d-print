@@ -1,0 +1,2 @@
+curl: (35) schannel: failed to receive handshake, SSL/TLS connection failed
+Official OrcaSlicer release download failed (curl exit 35).

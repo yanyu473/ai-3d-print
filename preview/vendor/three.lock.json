@@ -1,0 +1,18 @@
+{
+  "package": "three",
+  "version": "0.186.1",
+  "license": "MIT",
+  "upstream": "https://github.com/mrdoob/three.js",
+  "tarball": "https://mirrors.cloud.tencent.com/npm/three/-/three-0.186.1.tgz",
+  "integrity": "sha512-blFeqb49wRCSGUGj7gtpfnSGHy2lwDk94RhUmS1c/hTby70kvChbWpkJ4Pm1390LqzzvTmzgXKHPEafJwCb8jA==",
+  "sha256": "8cd068708ea44f2c73c944b1cead2ba2f0d5c15c8fc194e5700f4e4f4a033fe7",
+  "files": [
+    "LICENSE",
+    "build/three.core.js",
+    "build/three.module.js",
+    "examples/jsm/controls/OrbitControls.js",
+    "examples/jsm/loaders/GLTFLoader.js",
+    "examples/jsm/utils/BufferGeometryUtils.js",
+    "examples/jsm/utils/SkeletonUtils.js"
+  ]
+}

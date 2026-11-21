@@ -1,0 +1,23 @@
+✔ text, JPEG photo and PNG image projects build, edit, slice and survive restart (65508.2681ms)
+ℹ text: 25 layers, 4499 deposits
+ℹ photo: 15 layers, 1244 deposits
+ℹ image: 15 layers, 2252 deposits
+ℹ text resize: 75.00 × 50.00 × 6.00 mm, 30 layers, parent artifacts preserved
+ℹ photo resize: 60.00 × 46.15 × 4.50 mm, 22 layers, parent artifacts preserved
+ℹ Invalid and unchanged resize requests left project history intact
+ℹ 4→6 mm true hole edit, independent outer dimensions preserved, 0.25 mm profile cut 20 G-code layers
+ℹ Process-only rebuild changed actual G-code and filament use at 0% infill, preserving input and STL
+ℹ 0.1 mm revision: manufacturing check blocked slicing and G-code download
+ℹ Reloaded 8 archived projects after restarting the process
+✔ structural parts produce verified STEP features, real slicing, and edited descendants (36506.3509ms)
+ℹ Bracket: 4 STEP-verified bores on two axes, reinforced center web, 180 real layers
+ℹ Tray: open cavity and 4 STEP-verified blind pilot holes, 100 real layers
+ℹ Both temporary previews matched the archived GLBs after rebuild; each STEP and G-code changed while the original projects were preserved
+ℹ tests 2
+ℹ suites 0
+ℹ pass 2
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 102321.8579

@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="在浏览器里查看四孔安装板的实际 CAD 样件以及几何验证结果。">
+  <title>几何工作台 · 四孔安装板</title>
+  <link rel="stylesheet" href="/style.css">
+  <script type="importmap">{"imports":{"three":"/vendor/three/build/three.module.js"}}</script>
+  <script type="module" src="/preview.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="frame top-bar">
+      <div class="brand"><span class="mark" aria-hidden="true"><i></i></span>几何工作台</div>
+      <span class="scope">本机 · CAD 样件验证</span>
+    </div>
+  </header>
+  <main class="frame">
+    <div class="intro">
+      <div>
+        <p class="eyebrow">几何预览</p>
+        <h1>四孔安装板</h1>
+        <p class="subtitle">旋转模型核对孔位，逐层查看挤出刀路，或下载样件文件。</p>
+      </div>
+    </div>
+
+    <div class="layout">
+      <section class="viewport" id="viewport" aria-label="样件检查" data-view-state="loading">
+        <div class="viewport-top">
+          <div class="view-tools mode-picker" aria-label="预览方式">
+            <button type="button" id="model-mode" aria-pressed="true" aria-controls="mount">三维模型</button>
+            <button type="button" id="layer-mode" aria-pressed="false" aria-controls="layer-mount">分层刀路</button>
+          </div>
+          <div class="view-tools" id="model-tools" aria-label="三维视图控制">
+            <button type="button" id="isometric" aria-pressed="true" disabled>等轴</button>
+            <button type="button" id="top" aria-pressed="false" disabled>俯视</button>
+            <button type="button" id="wireframe" aria-pressed="false" disabled>线框</button>
+          </div>
+        </div>
+        <div id="mount" class="mount"></div>
+        <div id="view-message" class="view-message" role="status" aria-live="polite">正在读取样件…</div>
+        <div class="viewport-bottom" id="model-footer" aria-hidden="true">
+          <span class="coordinate"><i></i> Y 向上</span>
+          <span>拖动旋转 · 滚轮或双指缩放</span>
+        </div>
+        <section id="layer-mount" class="layer-mount" aria-label="分层挤出刀路" hidden>
+          <canvas id="layer-canvas" aria-label="当前层的俯视挤出刀路" hidden></canvas>
+          <p class="view-message" id="layer-message" role="status" aria-live="polite">正在读取离线切片…</p>
+          <div class="layer-controls" id="layer-controls" hidden>
+            <div class="layer-readout"><strong id="layer-position" aria-live="polite"></strong><span id="layer-height"></span></div>
+            <div class="layer-slider">
+              <button id="layer-prev" type="button" aria-label="上一层">−</button>
+              <input type="range" id="layer-index" min="1" max="1" value="1" aria-label="打印层">
+              <button id="layer-next" type="button" aria-label="下一层">+</button>
+            </div>
+            <p class="layer-caption"><span>挤出路径 · XY / mm</span><span>离线切片 · 待机型校准</span></p>
+          </div>
+        </section>
+      </section>
+
+      <aside aria-label="样件验证与下载" class="details">
+        <section class="panel">
+          <h2>STEP 几何回读</h2>
+          <p class="panel-copy">根据导出的工程实体计算</p>
+          <div class="measure-row" id="dimensions" aria-label="长宽厚，毫米">
+            <div><strong id="width">—</strong><span>长 / mm</span></div>
+            <div><strong id="length">—</strong><span>宽 / mm</span></div>
+            <div><strong id="height">—</strong><span>厚 / mm</span></div>
+          </div>
+          <dl class="facts">
+            <div><dt>通孔</dt><dd id="holes">—</dd></div>
+            <div><dt>实体体积</dt><dd id="volume">—</dd></div>
+            <div><dt>实体数量</dt><dd id="solids">—</dd></div>
+          </dl>
+        </section>
+        <section class="panel files">
+          <h2>样件下载</h2>
+          <ul class="file-list" id="downloads" aria-label="模型文件">
+            <li><a href="/cad/model.step" download aria-disabled="true"><span class="suffix">STEP</span><span>工程实体</span><span id="step-size" class="file-size"></span></a></li>
+            <li><a href="/cad/model.stl" download aria-disabled="true"><span class="suffix">STL</span><span>切片网格</span><span id="stl-size" class="file-size"></span></a></li>
+            <li><a href="/cad/model.glb" download aria-disabled="true"><span class="suffix">GLB</span><span>预览模型</span><span id="glb-size" class="file-size"></span></a></li>
+          </ul>
+          <a class="report-link" id="verification-link" href="/cad/verification.json" download aria-disabled="true">下载几何验证报告 <span aria-hidden="true">↘</span></a>
+          <div class="slice-download" id="slice-download" hidden>
+            <a class="report-link" href="/slice/toolpath.gcode" download>下载离线 G-code <span aria-hidden="true">↘</span></a>
+            <a class="report-link" href="/slice/verification.json" download>切片验证报告 <span aria-hidden="true">↘</span></a>
+          </div>
+        </section>
+      </aside>
+    </div>
+  </main>
+</body>
+</html>

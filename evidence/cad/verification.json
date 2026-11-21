@@ -1,0 +1,92 @@
+{
+  "status": "verified",
+  "checked_at_utc": "2026-11-18T16:17:13.871764+00:00",
+  "mode": "G0_local_fixture",
+  "geometry_type": "BRep",
+  "editability": "parametric",
+  "dimensions_source": "cad-spec.json",
+  "expected_volume_mm3": 11748.672587712817,
+  "builder": {
+    "script_sha256": "807015e2a775ce13adf32a0711e04d1a3f9ce1d204f10946ca7df0a0f26a0478",
+    "python": "3.12.14",
+    "build123d": "0.13.0",
+    "cadquery-ocp-novtk": "8.0.1.1.0",
+    "trimesh": "4.11.3"
+  },
+  "assets": {
+    "step": {
+      "file": "model.step",
+      "bytes": 30466,
+      "sha256": "4032edd5587fde344a425db31e3dce7bd078d25b119f5bb72bf5843d42457ac0",
+      "checks": {
+        "dimensions_mm_xyz": [
+          60.0,
+          40.0,
+          5.0
+        ],
+        "solid_count": 1,
+        "volume_mm3": 11748.672587712812,
+        "through_holes_xy_diameter_depth_mm": [
+          [
+            -23.0,
+            -13.0,
+            4.0,
+            5.0
+          ],
+          [
+            -23.0,
+            13.0,
+            4.0,
+            5.0
+          ],
+          [
+            23.0,
+            -13.0,
+            4.0,
+            5.0
+          ],
+          [
+            23.0,
+            13.0,
+            4.0,
+            5.0
+          ]
+        ]
+      }
+    },
+    "stl": {
+      "file": "model.stl",
+      "bytes": 102284,
+      "sha256": "b573d5c77ab9bfaed7d19487b5cca2a9b7c0974feab441b8d72b2c5f52827cfc",
+      "checks": {
+        "dimensions_mm_xyz": [
+          60.0,
+          40.0,
+          5.0
+        ],
+        "watertight": true,
+        "winding_consistent": true,
+        "connected_components": 1,
+        "triangles": 2044,
+        "volume_mm3": 11748.776755148792
+      }
+    },
+    "glb": {
+      "file": "model.glb",
+      "bytes": 83464,
+      "sha256": "e7f8ddc45ced0721242e027676c022084e3e9ac3a691481a2853630754e8034b",
+      "checks": {
+        "dimensions_mm_xyz": [
+          59.99999865889549,
+          39.99999910593033,
+          4.999999888241293
+        ],
+        "watertight": true,
+        "winding_consistent": true,
+        "connected_components": 1,
+        "triangles": 2044,
+        "volume_mm3": 11748.775946143802
+      }
+    }
+  }
+}

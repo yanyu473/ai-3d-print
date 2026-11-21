@@ -1,0 +1,22 @@
+test_bed_fit_and_thin_z_fail_independently (test_dfm.DfmTests.test_bed_fit_and_thin_z_fail_independently) ... ok
+test_changed_stl_is_rejected_even_if_geometry_is_same (test_dfm.DfmTests.test_changed_stl_is_rejected_even_if_geometry_is_same) ... ok
+test_disjoint_shells_report_component_count (test_dfm.DfmTests.test_disjoint_shells_report_component_count) ... ok
+test_flat_plate_reports_measured_features_and_analysis_limits (test_dfm.DfmTests.test_flat_plate_reports_measured_features_and_analysis_limits) ... ok
+test_inward_oriented_closed_mesh_fails_signed_volume (test_dfm.DfmTests.test_inward_oriented_closed_mesh_fails_signed_volume) ... ok
+test_ligament_narrower_than_one_line_blocks_slicing (test_dfm.DfmTests.test_ligament_narrower_than_one_line_blocks_slicing) ... ok
+test_ligament_narrower_than_two_lines_warns (test_dfm.DfmTests.test_ligament_narrower_than_two_lines_warns) ... ok
+test_missing_face_blocks_even_when_manifest_claims_watertight (test_dfm.DfmTests.test_missing_face_blocks_even_when_manifest_claims_watertight) ... ok
+test_no_stl_produces_safe_blocked_report (test_dfm.DfmTests.test_no_stl_produces_safe_blocked_report) ... ok
+test_nonfinite_stl_coordinates_block_slicing (test_dfm.DfmTests.test_nonfinite_stl_coordinates_block_slicing) ... ok
+test_sphere_does_not_report_flat_plate_thickness (test_dfm.DfmTests.test_sphere_does_not_report_flat_plate_thickness) ... ok
+test_dark_background_jpeg_and_transparent_webp (test_image_model.ImageModelTests.test_dark_background_jpeg_and_transparent_webp) ... ok
+test_different_pixels_change_geometry_and_preserve_holes (test_image_model.ImageModelTests.test_different_pixels_change_geometry_and_preserve_holes) ... ok
+test_low_contrast_is_rejected_without_partial_output (test_image_model.ImageModelTests.test_low_contrast_is_rejected_without_partial_output) ... ok
+test_parse_rejects_unsupported_features_and_units (test_text_model.TextModelTests.test_parse_rejects_unsupported_features_and_units) ... ok
+test_plate_uses_user_supplied_hole_dimensions (test_text_model.TextModelTests.test_plate_uses_user_supplied_hole_dimensions) ... ok
+test_three_other_shapes_export_verified_assets (test_text_model.TextModelTests.test_three_other_shapes_export_verified_assets) ... ok
+
+----------------------------------------------------------------------
+Ran 17 tests in 18.462s
+
+OK

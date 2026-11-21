@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="在本机从文字、拍照或图片生成 3D 模型，检查、切片并保存历史。">
+  <title>3D 打印工作台</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script type="importmap">{"imports":{"three":"/vendor/three/build/three.module.js"}}</script>
+  <script type="module" src="/app.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="frame topbar-inner">
+      <a class="brand" href="/"><span class="brand-mark" aria-hidden="true"></span>3D 打印工作台</a>
+      <nav class="workbench-nav" aria-label="工作台导航">
+        <a href="#specimens">样件</a>
+        <a href="#compose">新建模型</a>
+        <a href="#history">历史记录</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="frame workspace" aria-label="建模与切片">
+      <section class="results" id="results" aria-labelledby="project-title">
+        <div class="inspection">
+          <div class="card-heading inspection-heading">
+            <div>
+              <h1 id="project-title">模型预览</h1>
+              <p id="project-meta" class="field-help" hidden></p>
+            </div>
+            <div class="project-actions">
+              <button type="button" class="button secondary" id="back-version" hidden>上一版</button>
+              <button type="button" class="button secondary" id="revise" hidden>修改输入</button>
+            </div>
+          </div>
+          <div class="viewport" id="viewport">
+            <div class="view-top">
+              <div class="tools mode-picker" aria-label="预览方式">
+                <button type="button" id="view-model" aria-pressed="true" aria-controls="model-pane">三维模型</button>
+                <button type="button" id="view-layers" aria-pressed="false" aria-controls="layers-pane">分层刀路</button>
+              </div>
+              <div class="tools" id="model-controls" aria-label="三维视图控制">
+                <button type="button" id="isometric" aria-pressed="true" disabled>等轴</button>
+                <button type="button" id="top-view" aria-pressed="false" disabled>俯视</button>
+                <button type="button" id="wireframe" aria-pressed="false" disabled>线框</button>
+                <button type="button" id="section-toggle" aria-pressed="false" aria-controls="section-controls" disabled>剖切</button>
+              </div>
+            </div>
+            <div id="model-pane" class="view-pane">
+              <div class="model-mount" id="model-mount"></div>
+              <p class="view-message" id="model-message" role="status">提交需求后在这里查看生成的模型。</p>
+              <p class="model-hint" id="model-hint" hidden>拖动旋转 · 滚轮或双指缩放</p>
+              <div class="section-controls" id="section-controls" hidden>
+                <div class="section-readout"><label for="section-position">剖切高度</label><output id="section-value" for="section-position">65%</output></div>
+                <input id="section-position" type="range" min="5" max="100" step="1" value="65">
+              </div>
+            </div>
+            <div id="layers-pane" class="view-pane" hidden>
+              <canvas id="layer-canvas" aria-label="当前层的挤出刀路" hidden></canvas>
+              <p class="view-message" id="layer-message" role="status">切片完成后在这里逐层查看刀路。</p>
+              <div class="layer-controls" id="layer-controls" hidden>
+                <div class="layer-readout"><strong id="layer-position" aria-live="polite"></strong><span id="layer-height"></span></div>
+                <div class="layer-slider">
+                  <button type="button" id="layer-prev" aria-label="上一层">−</button>
+                  <input type="range" id="layer-index" min="1" max="1" value="1" aria-label="打印层">
+                  <button type="button" id="layer-next" aria-label="下一层">+</button>
+                </div>
+                <p class="layer-caption"><span>挤出路径 · XY / mm</span><span>离线切片 · 待机型校准</span></p>
+              </div>
+            </div>
+          </div>
+          <div class="stage-status">
+            <ol class="pipeline" id="pipeline" aria-label="任务流程" hidden>
+              <li data-stage="model"><span></span>建模</li>
+              <li data-stage="dfm"><span></span>可打印性</li>
+              <li data-stage="slice"><span></span>切片</li>
+              <li data-stage="complete"><span></span>归档</li>
+            </ol>
+            <p class="status-line" id="task-status" role="status" aria-live="polite" hidden></p>
+          </div>
+        </div>
+
+        <section class="specimen-shelf" id="specimens" aria-labelledby="specimen-heading">
+          <div class="specimen-heading">
+            <h2 id="specimen-heading">样件库</h2>
+            <p class="specimen-status" id="specimen-status" role="status" aria-live="polite"></p>
+          </div>
+          <ul id="specimen-list" class="specimen-list">
+            <li>
+              <button type="button" class="specimen-card" data-specimen="bracket" aria-pressed="false">
+                <span class="specimen-photo"><img src="/specimens/bracket.png" alt="" width="128" height="96" decoding="async"></span>
+                <span class="specimen-copy"><strong>加强角码</strong><span>加强筋 · 双面安装孔</span></span>
+              </button>
+            </li>
+            <li>
+              <button type="button" class="specimen-card" data-specimen="tray" aria-pressed="false">
+                <span class="specimen-photo"><img src="/specimens/tray.png" alt="" width="128" height="96" decoding="async"></span>
+                <span class="specimen-copy"><strong>电子盒</strong><span>内腔 · 四个螺丝柱</span></span>
+              </button>
+            </li>
+            <li>
+              <button type="button" class="specimen-card" data-specimen="washer" aria-pressed="false">
+                <span class="specimen-photo"><img src="/specimens/washer.png" alt="" width="128" height="96" decoding="async"></span>
+                <span class="specimen-copy"><strong>垫圈</strong><span>独立内外径</span></span>
+              </button>
+            </li>
+          </ul>
+        </section>
+
+        <div class="details" id="project-details" hidden>
+          <details class="detail disclosure" id="dfm-detail" hidden aria-labelledby="dfm-heading">
+            <summary><span id="dfm-heading">可打印性检查</span><span id="dfm-status" class="status-tag"></span></summary>
+            <ul id="dfm-checks" class="check-list"></ul>
+          </details>
+          <details class="detail disclosure" id="artifact-detail" hidden aria-labelledby="artifact-heading">
+            <summary><span id="artifact-heading">归档文件</span><span class="field-help" id="slice-summary" hidden></span></summary>
+            <ul id="artifacts" class="artifact-list"></ul>
+          </details>
+        </div>
+      </section>
+
+      <aside class="inspector" aria-label="模型属性">
+        <section class="geometry-detail" id="geometry-detail" hidden aria-labelledby="geometry-heading">
+          <h2 id="geometry-heading">已归档尺寸</h2>
+          <dl class="measurements" id="model-dimensions"></dl>
+          <p class="field-help" id="geometry-type"></p>
+        </section>
+
+        <section class="size-editor" id="size-editor" aria-labelledby="size-editor-heading" hidden>
+          <div class="size-heading">
+            <h3 id="size-editor-heading">参数编辑</h3>
+            <output class="size-readout" id="edit-dimensions" for="edit-scale edit-thickness" aria-live="off"></output>
+          </div>
+          <div class="size-options">
+            <div class="size-option">
+              <div class="size-option-meta"><label for="edit-scale">平面比例</label><output id="edit-scale-value" for="edit-scale" aria-live="off">100%</output></div>
+              <input type="range" id="edit-scale" min="25" max="200" step="1" value="100" aria-describedby="edit-help">
+            </div>
+            <div class="size-option">
+              <div class="size-option-meta"><label for="edit-thickness">厚度</label><output id="edit-thickness-value" for="edit-thickness" aria-live="off"></output></div>
+              <input type="range" id="edit-thickness" step="0.1" aria-describedby="edit-help">
+            </div>
+          </div>
+          <div class="parameter-fields" id="parameter-fields" aria-label="几何参数"></div>
+          <fieldset class="structure-controls" id="structure-controls" hidden>
+            <legend>结构选项</legend>
+            <div class="structural-fields" id="structural-fields"></div>
+            <button class="button secondary" id="preview-structure" type="button" aria-controls="preview-summary" disabled>预览结构</button>
+            <output class="preview-summary" id="preview-summary" role="status" aria-live="polite" aria-atomic="true" hidden></output>
+          </fieldset>
+          <fieldset class="process-controls">
+            <legend>切片设置</legend>
+            <div class="measure-fields">
+              <label class="field-label" for="process-layer-height">层高 <span>mm</span><input id="process-layer-height" type="number" min="0.08" max="0.30" step="0.01" inputmode="decimal" required></label>
+              <label class="field-label" for="process-infill">填充率 <span>%</span><input id="process-infill" type="number" min="0" max="100" step="0.1" inputmode="decimal" required></label>
+            </div>
+          </fieldset>
+          <div class="size-actions">
+            <button class="button secondary" id="edit-reset" type="button">恢复尺寸</button>
+            <button class="button primary" id="edit-apply" type="button">应用并重建</button>
+          </div>
+          <p class="field-help edit-help" id="edit-help">应用后生成新版本，并重新检查和切片。</p>
+          <p class="edit-message" id="edit-message" role="status" aria-live="polite"></p>
+        </section>
+      </aside>
+
+      <div class="sidebar" aria-label="创建与历史">
+        <section class="card composer" id="compose" aria-labelledby="compose-heading">
+          <h2 id="compose-heading">创建模型</h2>
+          <div class="source-tabs" role="tablist" aria-label="输入方式">
+            <button type="button" role="tab" id="tab-text" data-source="text" aria-selected="true" aria-controls="input-text">文字</button>
+            <button type="button" role="tab" id="tab-photo" data-source="photo" aria-selected="false" aria-controls="input-visual" tabindex="-1">拍照</button>
+            <button type="button" role="tab" id="tab-image" data-source="image" aria-selected="false" aria-controls="input-visual" tabindex="-1">图片</button>
+          </div>
+
+          <form id="create-form">
+            <p class="parent-note" id="parent-note" hidden><span id="parent-label"></span><button type="button" class="text-button" id="unlink-parent">取消关联</button></p>
+            <div id="input-text" role="tabpanel" aria-labelledby="tab-text">
+              <label class="field-label" for="description">零件描述</label>
+              <textarea id="description" name="text" rows="4" required maxlength="1200" placeholder="例如 60×40×5 mm 四孔安装板，孔径 4 mm，孔距 46×26 mm"></textarea>
+              <div class="examples" aria-label="输入示例">
+                <button type="button" data-example="60×40×5 mm 四孔安装板，孔径 4 mm，孔距 46×26 mm">四孔板</button>
+                <button type="button" data-example="长 40 宽 30 厚 5 mm 的矩形板">矩形板</button>
+                <button type="button" data-example="外径 32 mm，内径 12 mm，厚 4 mm 的垫圈">垫圈</button>
+                <button type="button" data-example="直径 24 mm，高 8 mm 的圆柱">圆柱</button>
+              </div>
+            </div>
+
+            <div id="input-visual" role="tabpanel" aria-labelledby="tab-photo" hidden>
+              <p class="field-help">正对平面物体，使用纯色背景和清楚的明暗对比。轮廓将按指定厚度拉伸。</p>
+              <div id="selection" class="selection" hidden>
+                <img id="source-thumbnail" alt="建模输入预览">
+                <div><span id="source-filename"></span><button class="text-button" id="clear-image" type="button">移除</button></div>
+              </div>
+              <input type="file" id="camera-file" accept="image/jpeg,image/png,image/webp" capture="environment" hidden>
+              <input type="file" id="gallery-file" accept="image/jpeg,image/png,image/webp" hidden>
+              <div class="file-actions">
+                <button type="button" class="button secondary" id="take-photo">打开相机</button>
+                <button type="button" class="button secondary" id="native-photo">系统拍照</button>
+                <button type="button" class="button secondary" id="pick-file">选择图片</button>
+              </div>
+              <div id="camera-panel" class="camera-panel" hidden>
+                <video id="camera-preview" autoplay muted playsinline aria-label="相机实时画面"></video>
+                <div class="file-actions">
+                  <button type="button" class="button secondary" id="capture-photo" disabled>使用这张照片</button>
+                  <button type="button" class="text-button" id="stop-camera">关闭相机</button>
+                </div>
+              </div>
+              <div class="measure-fields">
+                <label class="field-label" for="input-width">轮廓宽度 <span>mm</span><input type="number" id="input-width" min="1" max="500" step="any" inputmode="decimal" placeholder="60" disabled></label>
+                <label class="field-label" for="input-thickness">拉伸厚度 <span>mm</span><input type="number" id="input-thickness" min="0.1" max="200" step="any" inputmode="decimal" placeholder="5" disabled></label>
+              </div>
+              <p class="field-help format-note">JPG、PNG 或 WebP，最大 10 MB</p>
+            </div>
+            <p id="form-message" class="feedback" role="alert" hidden></p>
+            <button class="button primary" id="generate" type="submit">生成模型</button>
+          </form>
+        </section>
+
+        <section class="card history" id="history" aria-labelledby="history-heading" tabindex="-1">
+          <div class="card-heading"><h2 id="history-heading">历史记录</h2><button type="button" class="text-button" id="refresh-history">刷新</button></div>
+          <p class="field-help" id="history-message" role="status">正在读取历史…</p>
+          <ul class="history-list" id="history-list" hidden></ul>
+        </section>
+      </div>
+  </main>
+  <noscript><p class="frame">请开启浏览器 JavaScript 后使用工作台。</p></noscript>
+</body>
+</html>

@@ -1,0 +1,9 @@
+**
+!pyproject.toml
+!uv.lock
+!cad-worker/
+!cad-worker/build_plate.py
+!cad-worker/fixtures/
+!cad-worker/fixtures/mounting-plate.json
+!tools/
+!tools/cad.Dockerfile

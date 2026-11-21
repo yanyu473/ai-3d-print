@@ -1,0 +1,22 @@
+CAD 样件预览 http://127.0.0.1:4785/
+{
+  "downloadsVerified": [
+    {
+      "format": "step",
+      "bytes": 30466,
+      "sha256": "4032edd5587fde344a425db31e3dce7bd078d25b119f5bb72bf5843d42457ac0"
+    },
+    {
+      "format": "stl",
+      "bytes": 102284,
+      "sha256": "b573d5c77ab9bfaed7d19487b5cca2a9b7c0974feab441b8d72b2c5f52827cfc"
+    },
+    {
+      "format": "glb",
+      "bytes": 83464,
+      "sha256": "e7f8ddc45ced0721242e027676c022084e3e9ac3a691481a2853630754e8034b"
+    }
+  ],
+  "sliceLayers": 25,
+  "segmentCount": 6534
+}

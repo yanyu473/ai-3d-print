@@ -1,0 +1,7 @@
+START 2026-11-21T07:48:23.510Z isolated Chrome E2E on http://127.0.0.1:4796
+FIXTURE 59be3079-c880-4234-aadf-cc9af1fd05a1 loaded from sole copied archive, 180 layers, GLB 51d9b4009451
+PREVIEW browser displayed verified GLB 42319016265b with two ribs, four base holes and zero upright holes; archive count remained one
+REBUILD 02b0365f-64bc-4aab-9de4-89a89f2e592e parent 59be3079-c880-4234-aadf-cc9af1fd05a1; identical preview/rebuilt GLB, watertight STL 1477895da321; DFM warn; 180 layers; two archived versions
+VERSION previous-version control restored one rib, two base holes and two upright holes; archive and production fixture hashes unchanged; zero browser errors
+CLEANUP isolated test server exited and temporary data removed
+PASS

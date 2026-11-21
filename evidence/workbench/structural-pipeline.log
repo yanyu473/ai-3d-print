@@ -1,0 +1,12 @@
+✔ structural parts produce verified STEP features, real slicing, and edited descendants (32771.1194ms)
+ℹ Bracket: 4 STEP-verified bores on two axes, reinforced center web, 180 real layers
+ℹ Tray: open cavity and 4 STEP-verified blind pilot holes, 100 real layers
+ℹ Both rebuilt specs changed active STEP geometry and hashed G-code, originals preserved
+ℹ tests 1
+ℹ suites 0
+ℹ pass 1
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 32890.945

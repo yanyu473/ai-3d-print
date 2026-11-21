@@ -1,0 +1,4 @@
+PASS synthetic 3MF extraction and absolute G-code inspection
+PASS synthetic relative G-code inspection
+PASS synthetic movement with no extrusion rejected
+PASS wrong binary archive digest rejected before extraction

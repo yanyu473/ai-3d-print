@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "kind": "four_hole_plate",
+  "unit": "mm",
+  "reference_text": "制作一块 60×40×5 mm 的四孔安装板，孔径 4 mm。",
+  "parameters": {
+    "length": {"value": 60, "source": "requirements"},
+    "width": {"value": 40, "source": "requirements"},
+    "thickness": {"value": 5, "source": "requirements"},
+    "hole_diameter": {"value": 4, "source": "requirements"},
+    "x_spacing": {"value": 46, "source": "fixture_assumption"},
+    "y_spacing": {"value": 26, "source": "fixture_assumption"}
+  }
+}

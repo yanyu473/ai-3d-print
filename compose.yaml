@@ -1,0 +1,17 @@
+services:
+  cad-probe:
+    build:
+      context: .
+      dockerfile: tools/cad.Dockerfile
+    command:
+      - --spec
+      - /app/cad-worker/fixtures/mounting-plate.json
+      - --out
+      - /evidence/cad-compose
+    network_mode: none
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    volumes:
+      - ./evidence/replays:/evidence

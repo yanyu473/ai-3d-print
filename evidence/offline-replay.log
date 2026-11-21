@@ -1,0 +1,41 @@
+Verified STEP, STL and GLB: E:\AI-3D-Print\evidence\replays\offline-20261120-204340-625\cad
+{
+  "status": "verified_offline_slice",
+  "ready_for_device": false,
+  "engine": {
+    "npm": "three-slicer",
+    "version": "0.4.3",
+    "family": "OrcaSlicer-derived WASM",
+    "node": "v24.22.3",
+    "source_revision": "70e03a8a54786d4215776b36ce4e70caa076e213",
+    "wasm_sha256": "d6002df76a1d0435d2a139d044e988fdff488fd2733dfa994f07db58f052df70"
+  },
+  "stl": {
+    "bytes": 102284,
+    "sha256": "b573d5c77ab9bfaed7d19487b5cca2a9b7c0974feab441b8d72b2c5f52827cfc",
+    "dimensions_mm_xyz": [
+      60,
+      40,
+      5
+    ]
+  },
+  "gcode_file": {
+    "name": "toolpath.gcode",
+    "bytes": 394461,
+    "sha256": "6b67ea7dd9dd4bdfb66cc3837ac96351bf9d3a3ca9922f2e3a3171861b0faada",
+    "checked_linear_moves": 16695,
+    "positive_deposition_moves": 6534
+  },
+  "preview_file": {
+    "name": "toolpath-preview.json",
+    "bytes": 207130,
+    "sha256": "4475ec6a48f73ddb1545124f40d8c1466a35c78ead2c186162c9064b0e8b9d24"
+  },
+  "layer_count": 25,
+  "time_s_estimate": 2138.484375,
+  "filament_length_mm_estimate": 1827.530789938675,
+  "filament_mass_g_estimate": 5.450701090371543,
+  "path_segments": 6534,
+  "warnings": []
+}
+Verified local CAD and slice: E:\AI-3D-Print\evidence\replays\offline-20261120-204340-625

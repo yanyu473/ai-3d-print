@@ -1,0 +1,14 @@
+test_authentication_and_malformed_payloads_stay_unknown (test_probe.ProbeTests.test_authentication_and_malformed_payloads_stay_unknown) ... ok
+test_cli_writes_local_fixture_evidence_and_does_not_overwrite_it (test_probe.ProbeTests.test_cli_writes_local_fixture_evidence_and_does_not_overwrite_it) ... ok
+test_fixture_rejects_nonloopback_and_credentials_cannot_enter_urls (test_probe.ProbeTests.test_fixture_rejects_nonloopback_and_credentials_cannot_enter_urls) ... ok
+test_missing_status_is_never_inferred_as_idle (test_probe.ProbeTests.test_missing_status_is_never_inferred_as_idle) ... ok
+test_moonraker_firmware_disconnection_is_not_service_disconnection (test_probe.ProbeTests.test_moonraker_firmware_disconnection_is_not_service_disconnection) ... ok
+test_moonraker_maps_fraction_and_leaves_device_unknown_fields_empty (test_probe.ProbeTests.test_moonraker_maps_fraction_and_leaves_device_unknown_fields_empty) ... ok
+test_octoprint_disconnected_printer_uses_connection_status (test_probe.ProbeTests.test_octoprint_disconnected_printer_uses_connection_status) ... ok
+test_octoprint_records_temperature_and_native_percent (test_probe.ProbeTests.test_octoprint_records_temperature_and_native_percent) ... ok
+test_redirect_is_rejected_without_forwarding_header (test_probe.ProbeTests.test_redirect_is_rejected_without_forwarding_header) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 1.436s
+
+OK

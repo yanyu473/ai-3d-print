@@ -1,0 +1,7 @@
+Thickness adjustment from 5 to 15 mm changed 19.37% of pixels.
+Desktop WebGL canvas valid: 895×701, baseline 0.00%, scale adjustment changed 12.95% of pixels.
+Applied 120% geometry, 72×48×5 mm, 25 visible layers, and two history entries with new STL and G-code hashes.
+Independent length and 7.5 mm holes rebuilt a new STL, 0.25 mm layers and 25% infill generated a new 20-layer G-code, and the parent remained selectable.
+390px browser viewport showed the archived 3D revision with no horizontal overflow.
+Synthetic camera stream was requested, captured as JPEG, stopped after capture, and produced 15 real slice layers.
+The image uploader turned both transparent openings in a PNG into real through-holes and produced a 15-layer slice.
